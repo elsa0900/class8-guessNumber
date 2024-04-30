@@ -44,6 +44,7 @@ class ViewController: UIViewController {
             self.toggleSettingRange(sender.isOn)
         }
     }
+    
     @IBAction func confirmRange(_ sender: Any) {
         maxNumberWord = Int(maxRangeTextField.text!) ?? 100
         minNumberWord = Int(minRangeTextField.text!) ?? 0
@@ -55,7 +56,6 @@ class ViewController: UIViewController {
     
     @IBAction func submitResult(_ sender: UIButton) {
         let inputAnswer = Int(inputTextField.text!) ?? 0
-//        print(answer)s
         if inputAnswer == 0 || inputAnswer < minNumberWord || inputAnswer > maxNumberWord {
             warnTextLabel.text = "請注意填寫的值！"
         }else if inputAnswer < answer {
@@ -94,7 +94,6 @@ class ViewController: UIViewController {
         inputTextField.isHidden = isOn
         replayBtn.isHidden = !isOn
     }
-    
    
     func toggleSettingRange(_ isOn: Bool) {
         rangeNumberSwitch.isOn = isOn
